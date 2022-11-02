@@ -14,7 +14,7 @@ public class VinniPux extends AbstractCharacter implements Run, Listen, Emotiona
 
     @Override
     public void run() {
-        System.out.println(this.getName() + " теперь бежит");
+        System.out.println(this.getName() + " теперь бежит по опушке вокруг рощи");
     }
 
     @Override

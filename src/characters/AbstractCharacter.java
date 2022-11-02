@@ -1,5 +1,7 @@
 package characters;
 
+import locations.AbstractLocation;
+
 public abstract class AbstractCharacter {
     private String name;
 //    Constructors
@@ -10,7 +12,18 @@ public abstract class AbstractCharacter {
     public String getName(){
         return this.name;
     }
+    @Override
+    public int hashCode() {
+        return (name != null ? name.hashCode() : 0);
+    }
 
+    @Override
+    public boolean equals(Object o) {
+        if (o == this) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AbstractCharacter loc = (AbstractCharacter) o;
+        return (name == loc.name);
+    }
 
     @Override
     public String toString(){

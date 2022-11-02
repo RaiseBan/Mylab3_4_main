@@ -21,4 +21,12 @@ public abstract class AbstractLocation {
         AbstractLocation loc = (AbstractLocation) o;
         return (location == loc.location);
     }
+
+    @Override
+    public String toString(){
+        return "Loc{"
+                + "fullName='" + this.getLocation() + '\''
+                + ", Мест не будет"
+                + '}';
+    }
 }

@@ -11,7 +11,7 @@ public class RobinAbobin extends AbstractCharacter implements Run, Communicate {
 
     @Override
     public void run() {
-        System.out.println(this.getName() + " бежит");
+        System.out.println(this.getName() + " бежит по опушке вокруг рощи");
     }
 
     @Override

@@ -13,7 +13,7 @@ public class Piytka extends AbstractCharacter implements Run, Listen, Emotional 
 
     @Override
     public void run() {
-        System.out.println(this.getName() + " бежит, а не только есть грязь");
+        System.out.println(this.getName() + " бежит по опушке вокруг рощи, а не только есть грязь ");
     }
 
 
