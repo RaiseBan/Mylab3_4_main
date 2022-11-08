@@ -24,7 +24,7 @@ public class VinniPux extends AbstractCharacter implements Run, Listen, Emotiona
 
     @Override
     public void toEmotional(TypeOfEmotions type) {
-        System.out.println(this.getName() + " испытывает эмоцию " + type);
+        System.out.println(this.getName() + " испытывает эмоцию " + type.getEmotion());
     }
 
     @Override

@@ -1,5 +1,5 @@
 package actions;
 
-public interface Communicate {
+public interface    Communicate {
     void toCommunicate();
 }

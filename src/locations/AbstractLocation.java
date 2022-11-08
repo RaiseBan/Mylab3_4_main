@@ -22,11 +22,11 @@ public abstract class AbstractLocation {
         return (location == loc.location);
     }
 
-    @Override
-    public String toString(){
-        return "Loc{"
-                + "fullName='" + this.getLocation() + '\''
-                + ", Мест не будет"
-                + '}';
-    }
+//    @Override
+//    public String toString(){
+//        return "Loc{"
+//                + "fullName='" + this.getLocation() + '\''
+//                + ", Мест не будет"
+//                + '}';
+//    }
 }

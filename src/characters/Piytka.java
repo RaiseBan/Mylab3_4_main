@@ -1,11 +1,11 @@
 package characters;
-
 import actions.Listen;
 import actions.Run;
 import emotions.Emotional;
 import emotions.TypeOfEmotions;
 
 public class Piytka extends AbstractCharacter implements Run, Listen, Emotional {
+
     public Piytka(String name){
         super(name);
         System.out.println("Создан персонаж " + name);
@@ -24,7 +24,6 @@ public class Piytka extends AbstractCharacter implements Run, Listen, Emotional 
 
     @Override
     public void toEmotional(TypeOfEmotions type) {
-        System.out.println(this.getName() + " испытывает эмоцию " + type);
+        System.out.println(this.getName() + " испытывает эмоцию " + type.getEmotion());
     }
-
 }
