@@ -1,5 +1,6 @@
 package actions;
 
 public interface    Communicate {
-    void toCommunicate();
+    void toCommunicate(String str);
+
 }

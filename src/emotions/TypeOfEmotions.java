@@ -3,7 +3,8 @@ public enum TypeOfEmotions {
 
     CHEERS("Приветственные возгласы"),
     ASTONISHMENT("Удивление"),
-    SADNESS("грусть");
+    SADNESS("грусть"),
+    HAPPY("Счастливый");
 
     String name;
     TypeOfEmotions(String name){

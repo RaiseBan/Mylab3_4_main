@@ -1,5 +1,5 @@
 package actions;
 
 public interface Listen {
-    void listen();
+    void listen(String str);
 }

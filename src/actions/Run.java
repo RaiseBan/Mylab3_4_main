@@ -1,7 +1,8 @@
 package actions;
 
-public interface Run {
-    void run();
+import locations.Location;
 
+public interface Run {
+    void run(String str, Location loc);
 
 }

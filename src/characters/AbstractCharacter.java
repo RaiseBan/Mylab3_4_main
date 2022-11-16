@@ -1,12 +1,18 @@
 package characters;
 
-import locations.AbstractLocation;
-
 public abstract class AbstractCharacter {
+
+    public static int counter = 0;
+    public static void allIsListen(){
+        System.out.println(" ~~~они прислушались~~~ ");
+    }
+
     private String name;
 //    Constructors
     public AbstractCharacter(String name){
         this.name = name;
+        counter++;
+        System.out.println("Создан персонаж " + this.name);
     }
 //    Methods
     public String getName(){
