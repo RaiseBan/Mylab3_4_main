@@ -1,5 +1,6 @@
 package characters;
 
+import Exceptions.OutputException;
 import actions.*;
 import emotions.Emotional;
 import emotions.TypeOfEmotions;
@@ -92,7 +93,10 @@ public class RobinAbobin extends AbstractCharacter implements NotToBe, Run, Comm
     public void toEmotional(TypeOfEmotions type) {
         System.out.println("Испытывает эмоцию " + type.getEmotion());
     }
-    public void toEmotional(TypeOfEmotions type, boolean bool){
+    public void toEmotional(TypeOfEmotions type, boolean bool) throws OutputException{
+        if (bool){
+            throw new OutputException("shalom");
+        }
         System.out.println("Не испытывает эмоцию " + type.getEmotion());
     }
     @Override

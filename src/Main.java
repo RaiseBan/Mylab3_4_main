@@ -113,5 +113,8 @@ public class Main {
             e.printStackTrace();
 
         }
+        catch (OutputException e ){
+            System.out.println("OutputException");
+        }
     }
 }
