@@ -110,7 +110,7 @@ public class Main {
 
 
         }catch (InputException e){
-            System.out.println("OutputException");
+            System.err.println("OutputException");
         }catch (LengthOfSentenceException e){
             System.err.println(e.getMessage());
         }
