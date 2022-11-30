@@ -1,12 +1,13 @@
 package characters;
 
+import Exceptions.LengthOfSentenceException;
 import actions.*;
 import emotions.Emotional;
 import emotions.TypeOfEmotions;
 import items.Items;
 import locations.Location;
 
-public class VinniPux extends AbstractCharacter implements Check, Take, BeCareful, WakeUp, Run, Listen, Emotional, Communicate, Goto, ByeBye, Sing {
+public class VinniPux extends AbstractCharacter implements Run, Listen, Emotional, Communicate, Goto, ByeBye, Sing {
     public VinniPux(String name){
         super(name);
     }
@@ -27,8 +28,12 @@ public class VinniPux extends AbstractCharacter implements Check, Take, BeCarefu
     }
 
     @Override
-    public void toCommunicate(String str) {
+    public void toCommunicate(String str) throws LengthOfSentenceException {
+        if (str.length() > 40){
+            throw new LengthOfSentenceException("ОСТАНОВКА!!!!!, вы привысили скорость! !! ! ! ");
+        }
         System.out.println(this.getName() + str);
+
 
     }
 
@@ -46,7 +51,6 @@ public class VinniPux extends AbstractCharacter implements Check, Take, BeCarefu
         System.out.println(this.getName() + " попращался");
     }
 
-    @Override
     public void wakeup(Location location) {
         System.out.println(this.getName() + " встал" + location);
     }
@@ -54,20 +58,16 @@ public class VinniPux extends AbstractCharacter implements Check, Take, BeCarefu
         System.out.println(this.getName() + " встал в " + time.getTime());
 
     }
-
-    @Override
     public void careful() {
         System.out.println(this.getName() + " насторожился");
     }
 
 
 
-    @Override
     public void take(Items item) {
         System.out.println(this.getName() + " взял " + item);
     }
 
-    @Override
     public void check(String str) {
         System.out.println(this.getName() + " проверяет " + str);
     }

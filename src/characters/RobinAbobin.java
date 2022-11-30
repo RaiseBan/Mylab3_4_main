@@ -1,12 +1,11 @@
 package characters;
 
-import Exceptions.OutputException;
 import actions.*;
 import emotions.Emotional;
 import emotions.TypeOfEmotions;
 import locations.Location;
 
-public class RobinAbobin extends AbstractCharacter implements NotToBe, Run, Communicate, ToBe, ByeBye,Travel, GetOff, Think, Emotional, Goto, Listen, Sing {
+public class RobinAbobin extends AbstractCharacter implements Run, Communicate, ByeBye, Emotional, Goto, Listen, Sing {
     Clothes clo = new Clothes();
 
 
@@ -17,7 +16,6 @@ public class RobinAbobin extends AbstractCharacter implements NotToBe, Run, Comm
 
     }
 
-    @Override
     public void saySentence(String sentence, boolean var1, boolean var2, boolean var3) {
         class TypeOfSentence{
             private final boolean interest = var1;
@@ -41,18 +39,15 @@ public class RobinAbobin extends AbstractCharacter implements NotToBe, Run, Comm
         System.out.println(sentence);
     }
 
-    @Override
     public void getOff() {
         System.out.println(this.getName() + " сошёл с " + Location.SHIP);
     }
 
-    @Override
     public void travel(Location loc) {
         System.out.println(this.getName() + " Путешествует в " + loc);
     }
 
 
-    @Override
     public void toBe(Location loc) {
         System.out.println(this.getName() + " Пробыл в " + loc.getLocation());
     }
@@ -61,21 +56,15 @@ public class RobinAbobin extends AbstractCharacter implements NotToBe, Run, Comm
         System.out.println(this.getName() + "провел весь " + time.getTime() + " в " + loc.getLocation());
     }
 
-    public class Clothes{
+    static public class Clothes{
         private void setClothes(String[] stuff){
             for(String var: stuff){
-                System.out.println(RobinAbobin.this.getName() + " одевает " + var);
+                System.out.println("Вещь: " + var);
             }
-        }
-        private void takeoffCloth(String stuff){
-            System.out.println(RobinAbobin.this.getName() + " снял " + stuff);
         }
     }
     public void putOn(String ... stuff){
         clo.setClothes(stuff);
-    }
-    public void takeOff(String stuff){
-        clo.takeoffCloth(stuff);
     }
 
     @Override
@@ -93,10 +82,7 @@ public class RobinAbobin extends AbstractCharacter implements NotToBe, Run, Comm
     public void toEmotional(TypeOfEmotions type) {
         System.out.println("Испытывает эмоцию " + type.getEmotion());
     }
-    public void toEmotional(TypeOfEmotions type, boolean bool) throws OutputException{
-        if (bool){
-            throw new OutputException("shalom");
-        }
+    public void toEmotional(TypeOfEmotions type, boolean bool){
         System.out.println("Не испытывает эмоцию " + type.getEmotion());
     }
     @Override
@@ -118,7 +104,6 @@ public class RobinAbobin extends AbstractCharacter implements NotToBe, Run, Comm
         System.out.println(this.getName() + str);
     }
 
-    @Override
     public void notToBe() {
         System.out.println("Это был не " + this.getName());
     }

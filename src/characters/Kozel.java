@@ -11,9 +11,6 @@ public class Kozel extends AbstractCharacter implements Goto, ByeBye {
         super(name);
 
     }
-//    public void knock(String str, Items item){
-//        knock.knock(str, item);
-//    }
 
     @Override
     public void goToPlace(Location loc) {

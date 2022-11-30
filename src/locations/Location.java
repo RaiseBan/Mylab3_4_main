@@ -20,7 +20,7 @@ public enum Location {
         public static void maelTaking(Meal var){
             System.out.println("Время " + var.getTypeOfMeal() + "a");
         }
-        public static String timenow;
+        private static String timenow;
         public void changeTime(String t){
             timenow = t;
             System.out.println("Настало " +  timenow);

@@ -1,5 +1,5 @@
-import Exceptions.OutputException;
-import Exceptions.PermissionException;
+import Exceptions.InputException;
+import Exceptions.LengthOfSentenceException;
 import actions.Knock;
 import characters.*;
 import emotions.TypeOfEmotions;
@@ -9,10 +9,11 @@ import locations.Location;
 import characters.AbstractCharacter;
 
 public class Main {
-    public static void main(String[] args) throws OutputException {
+    public static void main(String[] args) {
         try {
             HistoryControl.startStory();
-            Weather.Condition weather = new Weather.Condition();
+            Weather weather = new Weather();
+            weather.change("утро");
             Location.Time time = new Location.Time();
             Piytka piytka = new Piytka("Пятка");
             RobinAbobin robin = new RobinAbobin("РобинАбобин");
@@ -30,7 +31,7 @@ public class Main {
             Knock knock = new Knock() {
                 @Override
                 public void knock(AbstractCharacter abs, String name, Items item) {
-                    System.out.println( abs.getName() + " стучит в " + item.getItemName() + name);
+                    System.out.println(abs.getName() + " стучит в " + item.getItemName() + name);
                 }
             };
             knock.knock(kozel, "Робин", Items.DOOR);
@@ -45,7 +46,7 @@ public class Main {
             AbstractCharacter.allIsListen();
             Singers musician = new Singers("Певцы");
             musician.toCommunicate("напевали, что и он идет, и снег идет");
-            weather.change("снег");
+            weather.change("Снег");
             musician.changeText();
             musician.stopTalking();
 
@@ -65,6 +66,10 @@ public class Main {
             System.out.println();
             piytka.listen("слушает");
             vini.listen("Слушает");
+            if (!(vini.getName().equals("Пух") | piytka.getName().equals("Козел 0.5%") | robin.getName().equals("РобинАбобин"))){
+                System.out.println("1111111111111111111");
+                throw new InputException();
+            }
 
             System.out.println();
             piytka.toEmotional(TypeOfEmotions.ASTONISHMENT);
@@ -72,10 +77,6 @@ public class Main {
             System.out.println();
             vini.goToPlace(Location.EDGE);
             piytka.goToPlace(Location.EDGE);
-
-
-
-
 
 
             System.out.println(Location.HOUSE.toString());
@@ -108,13 +109,10 @@ public class Main {
             HistoryControl.endOfTheStory();
 
 
-        } catch (PermissionException e){
-            System.out.println("PermissionException");
-            e.printStackTrace();
-
-        }
-        catch (OutputException e ){
+        }catch (InputException e){
             System.out.println("OutputException");
+        }catch (LengthOfSentenceException e){
+            System.err.println(e.getMessage());
         }
     }
 }

@@ -1,6 +1,8 @@
 package actions;
 
-public interface    Communicate {
-    void toCommunicate(String str);
+import Exceptions.LengthOfSentenceException;
+
+public interface Communicate {
+    void toCommunicate(String str) throws LengthOfSentenceException;
 
 }

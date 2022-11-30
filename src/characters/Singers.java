@@ -1,16 +1,11 @@
 package characters;
-
-import actions.ChangeTextOfTheSong;
 import actions.Communicate;
-import actions.StopTalking;
 
-public class Singers extends AbstractCharacter implements Communicate, StopTalking, ChangeTextOfTheSong {
+public class Singers extends AbstractCharacter implements Communicate {
 
     public Singers(String name){
         super(name);
     }
-
-    @Override
     public void stopTalking() {
         System.out.println("");
     }
@@ -20,7 +15,6 @@ public class Singers extends AbstractCharacter implements Communicate, StopTalki
         System.out.println(this.getName() + str);
     }
 
-    @Override
     public void changeText() {
         System.out.println("Певцы резко поменяли слова песни");
     }
